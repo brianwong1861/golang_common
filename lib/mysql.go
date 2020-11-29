@@ -5,8 +5,8 @@ import (
 	"database/sql/driver"
 	"errors"
 	"fmt"
-	"github.com/e421083458/gorm"
-	_ "github.com/e421083458/gorm/dialects/mysql"
+	"github.com/brianwong1861/gorm"
+	_ "github.com/brianwong1861/gorm/dialects/mysql"
 	"reflect"
 	"regexp"
 	"strconv"
@@ -132,11 +132,11 @@ func (logger *MysqlGormLogger) Print(values ...interface{}) {
 }
 
 // LogCtx(true) 时会执行改方法
-func (logger *MysqlGormLogger) CtxPrint(s *gorm.DB,values ...interface{}) {
-	ctx,ok:=s.GetCtx()
-	trace:=NewTrace()
-	if ok{
-		trace=ctx.(*TraceContext)
+func (logger *MysqlGormLogger) CtxPrint(s *gorm.DB, values ...interface{}) {
+	ctx, ok := s.GetCtx()
+	trace := NewTrace()
+	if ok {
+		trace = ctx.(*TraceContext)
 	}
 	message := logger.LogFormatter(values...)
 	if message["level"] == "sql" {

@@ -2,14 +2,14 @@ package test
 
 import (
 	"fmt"
-	"github.com/e421083458/golang_common/lib"
+	"github.com/brianwong1861/golang_common/lib"
 	"github.com/garyburd/redigo/redis"
 	"testing"
 )
 
 func Test_Redis(t *testing.T) {
 	SetUp()
-	
+
 	c, err := lib.RedisConnFactory("default")
 	if err != nil {
 		t.Fatal(err)

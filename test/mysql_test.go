@@ -2,8 +2,8 @@ package test
 
 import (
 	"fmt"
-	"github.com/e421083458/golang_common/lib"
-	"github.com/e421083458/gorm"
+	"github.com/brianwong1861/golang_common/lib"
+	"github.com/brianwong1861/gorm"
 	"testing"
 	"time"
 )
